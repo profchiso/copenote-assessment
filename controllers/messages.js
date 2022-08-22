@@ -1,3 +1,5 @@
+const Message = require('../database/models/Messages');
+
 exports.getMessages = async(req, res) => {}
 exports.getMessage = async(req, res) => {}
 exports.createMessage = async(req, res) => {}
