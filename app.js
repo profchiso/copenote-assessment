@@ -6,12 +6,13 @@ const cors = require('cors');
 const subscribersRoutes = require('./routes/subscribers');
 const messagesRoutes = require('./routes/messages');
 const undefinedRoutes = require('./routes/undefinedRoutes');
+const dbToConnect = require('./database/dbconnection');
+
 
 const app = express();
 app.use(cors())
 app.use(express.json());
-
-
+dbToConnect(); // connect to the database
 
 app.get('/', (req, res) => {
 
