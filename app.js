@@ -3,7 +3,7 @@ const cors = require('cors');
 
 
 // requre routes
-const usersRoutes = require('./routes/users');
+const subscribersRoutes = require('./routes/subscribers');
 const messagesRoutes = require('./routes/messages');
 const undefinedRoutes = require('./routes/undefinedRoutes');
 
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.status(200).json({ success: true, message: 'Welcome to the CopeNote API' });
 });
 
-app.use("/api/v1/users", usersRoutes);
+app.use("/api/v1/subscribers", subscribersRoutes);
 app.use("/api/v1/messages", messagesRoutes);
 app.use(undefinedRoutes)
 
