@@ -11,7 +11,7 @@ exports.getAllMessages = async() => {
     }
 }
 
-exports.getMessageDifferences = async(allMessages, alreadySentMessages) => {
+exports.getMessageDifference = (allMessages, alreadySentMessages) => {
 
     let difference = allMessages.filter(x => !alreadySentMessages.includes(x));
     return difference

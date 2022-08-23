@@ -9,6 +9,10 @@ const { messagesRouter } = require('./routes/messages');
 const { undefinedRouter } = require('./routes/undefinedRoutes');
 const connectToDb = require('./database/dbconnection');
 
+const { getMessageDifference } = require("./utils/getMessages")
+
+console.log(getMessageDifference([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]))
+
 
 const app = express();
 app.use(cors())
