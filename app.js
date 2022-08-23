@@ -20,7 +20,7 @@ connectToDb(); // connect to the database
 
 app.get('/', (req, res) => {
 
-    res.status(200).json({ success: true, message: 'Welcome to the CopeNote API', statusCode: 200 });
+    res.status(200).json({ success: true, message: 'Welcome to the COPE NOTES API', statusCode: 200 });
 });
 
 app.use("/api/v1/subscribers", subscribersRouter);
