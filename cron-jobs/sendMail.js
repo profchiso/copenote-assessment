@@ -33,6 +33,7 @@ exports.sendEmailAtInterval = async() => {
                     text: messageToBeSent.message,
                 }
                 await sendMailWithSendgrid(mailOptions)
+                console.log(`Sent message to ${subsciber.email}`)
                 subsciber.recievedMessages.push(messageToBeSent.messageId)
                 await subsciber.save()
 
@@ -54,6 +55,7 @@ exports.sendEmailAtInterval = async() => {
                     text: randomMessage[0].message,
                 }
                 await sendMailWithSendgrid(mailOptions)
+                console.log(`Sent message to ${subsciber.email}`)
                 subsciber.recievedMessages.push(randomMessage[0].messageId)
                 await subsciber.save()
             }
