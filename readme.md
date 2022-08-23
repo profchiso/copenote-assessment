@@ -27,7 +27,7 @@ This repository contains the codebase for a technical assessment from COPE NOTES
 
 # Other informations
 
-- The hosted or live application can be found **[here](https://exchange-crypto-fiat.netlify.app/)**
+- The hosted or live and working API can be found **[here](https://exchange-crypto-fiat.netlify.app/)**
 
 - Both the frontend and the backend application are Dockerized. At the root folder of the both applications is a **Dockerfile** which contains the docker directives to create the Docker container for the applications.
 - Both the frontend and the backend application use the latest version of **node** **_18.7.0_** and **npm** **_8.15.0_**
