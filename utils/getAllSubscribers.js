@@ -1,4 +1,4 @@
-const Subsciber = require('../database/models/Subscribers');
+const Subsciber = require('../database/models/subscribers');
 exports.getAllSubscribers = async() => {
     try {
         const messages = await Subsciber.find({})

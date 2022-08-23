@@ -1,4 +1,4 @@
-const Subsciber = require('../database/models/Subscribers');
+const Subsciber = require('../database/models/subscribers');
 exports.getAllSubscribers = async(req, res, ) => {
     try {
         let requestQueryObject = {...req.query }
