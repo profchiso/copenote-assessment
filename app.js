@@ -37,7 +37,7 @@ app.use(undefinedRouter)
 cronJob.schedule(
     `*/${process.env.MINUTE} * * * *`,
     async() => {
-        console.log(`run every  ${process.env.MINUTES} minutes`);
+        console.log(`run every  ${process.env.MINUTE} minutes`);
         await sendEmailAtInterval()
 
     }, { scheduled: true }
