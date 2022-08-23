@@ -29,7 +29,7 @@ exports.sendEmailAtInterval = async() => {
                 let mailOptions = {
                     from: process.env.SENDER_EMAIL,
                     to: subsciber.email,
-                    subject: messageToBeSent.subject || `CopeNote Health mail`,
+                    subject: messageToBeSent.subject || `Cope Notes Health mail`,
                     text: messageToBeSent.message,
                 }
                 await sendMailWithSendgrid(mailOptions)
@@ -51,7 +51,7 @@ exports.sendEmailAtInterval = async() => {
                 let mailOptions = {
                     from: process.env.SENDER_EMAIL,
                     to: subsciber.email,
-                    subject: randomMessage[0].subject || `CopeNote Health mail`,
+                    subject: randomMessage[0].subject || `Cope Notes Health mail`,
                     text: randomMessage[0].message,
                 }
                 await sendMailWithSendgrid(mailOptions)

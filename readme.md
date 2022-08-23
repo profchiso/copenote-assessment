@@ -1,6 +1,6 @@
 # Okorie-Chinedu-Sunday
 
-Repository for COPE NOTES technical assessment o
+Repository for COPE NOTES technical assessment.
 
 # Introduction
 
