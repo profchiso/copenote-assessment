@@ -83,12 +83,12 @@ exports.getMessage = async(req, res, ) => {
 }
 exports.createMessage = async(req, res, ) => {
     try {
-        const { message } = req.body;
+        const { message, subject } = req.body;
         if (!message) {
             return res.status(400).json({ message: 'message is required', sucess: false, statusCode: 400 });
         }
         let messageId = await Message.estimatedDocumentCount();
-        const createdMessage = await Message.create({ message, messageId: messageId + 1 });
+        const createdMessage = await Message.create({ message, messageId: messageId + 1, subject });
         return res.status(201).json({ Message: createdMessage, sucess: true, statusCode: 201 });
     } catch (error) {
         console.log(error);

@@ -10,8 +10,10 @@ const { undefinedRouter } = require('./routes/undefinedRoutes');
 const connectToDb = require('./database/dbconnection');
 
 const { getMessageDifference } = require("./utils/getMessages")
+const { getRandomInt } = require("./utils/generateRandomNumber")
 
-console.log(getMessageDifference([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]))
+//console.log(getMessageDifference([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]))
+//console.log(getRandomInt(3))
 
 
 const app = express();

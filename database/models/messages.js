@@ -7,6 +7,11 @@ const MessageSchema = new Schema({
         required: true,
 
     },
+    subject: {
+        type: String,
+        required: true,
+
+    },
     messageId: {
         type: Number,
         required: true,
