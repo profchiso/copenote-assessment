@@ -1,4 +1,4 @@
-const Message = require('../database/models/Messages');
+const Message = require('../database/models/messages');
 
 exports.getAllMessages = async(req, res, ) => {
     try {
