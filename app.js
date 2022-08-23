@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
+const cronJob = require("node-cron");
 
 
 // requre routes
@@ -9,8 +10,9 @@ const { messagesRouter } = require('./routes/messages');
 const { undefinedRouter } = require('./routes/undefinedRoutes');
 const connectToDb = require('./database/dbconnection');
 
-const { getMessageDifference } = require("./utils/getMessages")
-const { getRandomInt } = require("./utils/generateRandomNumber")
+// const { getMessageDifference } = require("./utils/getMessages")
+// const { getRandomInt } = require("./utils/generateRandomNumber")
+const { sendEmailAtInterval } = require("./cron-jobs/sendMail")
 
 //console.log(getMessageDifference([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]))
 //console.log(getRandomInt(3))
@@ -29,6 +31,17 @@ app.get('/', (req, res) => {
 app.use("/api/v1/subscribers", subscribersRouter);
 app.use("/api/v1/messages", messagesRouter);
 app.use(undefinedRouter)
+
+
+
+cronJob.schedule(
+    `*/${process.env.MINUTES} * * * *`,
+    async() => {
+        console.log(`run every  ${process.env.MINUTES} minutes`);
+        await sendEmailAtInterval()
+
+    }, { scheduled: true }
+);
 
 
 

@@ -6,7 +6,17 @@ exports.sendEmailAtInterval = async() => {
 
     try {
         let subscibers = await getAllSubscribers()
+
         let messages = await getAllMessages()
+        if (!subscibers.length) {
+            console.log("No subscribers found")
+            return
+
+        }
+        if (!messages.length) {
+            console.log("No messages found");
+            return
+        }
         let messageIds = messages.map(message => message.messageId)
         for (let subsciber of subscibers) {
             let allSubscriberRecievedMail = subsciber.recievedMessages
