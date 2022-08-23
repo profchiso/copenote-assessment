@@ -88,7 +88,7 @@ exports.createMessage = async(req, res, ) => {
             return res.status(400).json({ message: 'message is required', sucess: false, statusCode: 400 });
         }
         let messageId = await Message.estimatedDocumentCount();
-        const createdMessage = await Message.create({ message, messageId: messageId + 1, subject });
+        const createdMessage = await Message.create({ message, messageId: messageId + 1, subject: subject || "Cope Notes Health mail" });
         return res.status(201).json({ message: createdMessage, sucess: true, statusCode: 201 });
     } catch (error) {
         console.log(error);
